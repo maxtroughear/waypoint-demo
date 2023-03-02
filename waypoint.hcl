@@ -7,7 +7,7 @@ app "waypoint-demo" {
   }
 
   build {
-    use "docker" {}
+    use "pack" {}
 
     registry {
       use "docker" {
