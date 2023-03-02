@@ -11,9 +11,13 @@ app "waypoint-demo" {
 
     registry {
       use "docker" {
-        image = "waypoint-demo"
+        image = "maxtroughear/waypoint-demo"
         tag   = gitrefpretty()
         local = true
+        auth {
+          username = var.registry_username
+          password = var.registry_password
+        }
       }
     }
   }
@@ -30,4 +34,18 @@ app "waypoint-demo" {
       load_balancer = true
     }
   }
+}
+
+variable "registry_username" {
+  default     = "username"
+  type        = string
+  sensitive   = true
+  description = "username for container registry"
+}
+
+variable "registry_password" {
+  default     = "password"
+  type        = string
+  sensitive   = true
+  description = "password for registry"
 }
