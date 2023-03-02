@@ -12,7 +12,7 @@ app "waypoint-demo" {
     registry {
       use "docker" {
         image = "waypoint-demo"
-        tag   = gitrefpretty()
+        tag   = "latest"
         local = true
       }
     }
