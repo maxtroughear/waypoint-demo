@@ -7,12 +7,12 @@ app "waypoint-demo" {
   }
 
   build {
-    use "pack" {}
+    use "docker" {}
 
     registry {
       use "docker" {
         image = "waypoint-demo"
-        tag   = "latest"
+        tag   = gitrefpretty()
         local = true
       }
     }
