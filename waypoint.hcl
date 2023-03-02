@@ -26,12 +26,14 @@ app "waypoint-demo" {
     use "kubernetes" {
       probe_path   = "/"
       service_port = 8080
+      namespace    = "demo"
     }
   }
 
   release {
     use "kubernetes" {
       load_balancer = true
+      namespace     = "demo"
     }
   }
 }
